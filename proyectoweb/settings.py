@@ -180,3 +180,5 @@ if 'RENDER' in os.environ:
             conn_max_age=600
         )
     }
+# Configuración para producción
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
