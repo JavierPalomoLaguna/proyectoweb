@@ -1,0 +1,104 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4 text-white">🛒 Tu carrito de compra</h2>
+
+  {% if carro %}
+    <table class="table table-bordered table-hover align-middle bg-light">
+      <thead class="table-warning text-center">
+        <tr>
+          <th>Producto</th>
+          <th>Nombre</th>
+          <th>Precio unitario</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for key, item in carro.items %}
+        <tr>
+          <td class="text-center">
+            <img src="{{ item.imagen }}" alt="Imagen" style="width: 80px; border-radius: 6px;">
+          </td>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.precio|floatformat:2 }} €</td>
+          <td class="text-center">{{ item.cantidad }}</td>
+          <td>{{ item.total|floatformat:2 }} €</td>
+          <td class="text-center">
+            <a href="{% url 'sumar_producto' key %}" class="btn btn-sm btn-success me-1">+</a>
+            <a href="{% url 'restar_producto' key %}" class="btn btn-sm btn-secondary me-1">−</a>
+            <a href="{% url 'eliminar_producto' key %}" class="btn btn-sm btn-danger">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
+    <!-- ✅ SECCIÓN CORREGIDA: USAR VARIABLES DE CONTEXT PROCESSORS -->
+    <div class="row justify-content-end">
+      <div class="col-md-6">
+        <div class="card bg-light">
+          <div class="card-body">
+            <h5 class="card-title">Resumen del pedido</h5>
+            
+            <div class="d-flex justify-content-between mb-2">
+              <span>Subtotal productos:</span>
+              <strong>{{ importe_total_carro|floatformat:2 }} €</strong>
+            </div>
+            
+            <div class="d-flex justify-content-between mb-2">
+              <span>
+                Gastos de envío:
+                {% if envio_gratis_carro %}  <!-- ✅ CAMBIADO: envio_gratis_carro -->
+                  <small class="text-success">(Gratis)</small>
+                {% endif %}
+              </span>
+              <strong>
+                {% if envio_gratis_carro %}  <!-- ✅ CAMBIADO: envio_gratis_carro -->
+                  0.00 €
+                {% else %}
+                  {{ gastos_envio_carro|floatformat:2 }} €  <!-- ✅ CAMBIADO: gastos_envio_carro -->
+                {% endif %}
+              </strong>
+            </div>
+            
+            {% if not envio_gratis_carro %}  <!-- ✅ CAMBIADO: envio_gratis_carro -->
+            <div class="small text-muted mb-3">
+              <i class="fas fa-truck"></i>
+              ¡Te faltan {{ falta_para_envio_gratis|floatformat:2 }} € para envío gratis!
+              (Envío gratis en pedidos superiores a {{ umbral_envio_gratis|floatformat:2 }} €)
+            </div>
+            {% else %}
+            <div class="small text-success mb-3">
+              <i class="fas fa-check-circle"></i>
+              ¡Envío gratis aplicado!
+            </div>
+            {% endif %}
+            
+            <hr>
+            <div class="d-flex justify-content-between mb-3">
+              <span><strong>Total:</strong></span>
+              <strong class="h5 text-success">{{ total_con_envio_carro|floatformat:2 }} €</strong>  <!-- ✅ CAMBIADO: total_con_envio_carro -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-end mt-4">
+      {% if request.session.ultima_categoria %}
+      <a href="{% url 'productos_por_categoria' request.session.ultima_categoria %}" class="btn btn-success">Seguir comprando</a>
+      {% else %}
+      <a href="{% url 'tienda' %}" class="btn btn-success">Seguir comprando</a>
+      {% endif %}  
+      <a href="{% url 'checkout' %}" class="btn btn-warning fw-bold">Tramitar pedido</a>
+      <a href="{% url 'vaciar_carro' %}" class="btn btn-danger me-2">Vaciar carrito</a>      
+    </div>
+  {% else %}
+    <div class="alert alert-info text-center">Tu carrito está vacío. ¡Ve a la tienda y añade algo!</div>
+  {% endif %}
+</div>
+
+{% endblock %}

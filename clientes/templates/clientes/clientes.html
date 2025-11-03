@@ -1,0 +1,59 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% block content %}
+  <div class="container mt-5 zona-cliente">
+    <h2>Registro de Cliente</h2>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert-custom">
+          {{ message }}
+        </div>
+        <div class="mt-3">
+          <a href="{% url 'tramitar_pedido' %}" class="btn btn-success">Seguir con la compra</a>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST" novalidate>
+      {% csrf_token %}
+
+      <div class="row">
+        <!-- Columna izquierda -->
+        <div class="col-md-6">
+          {% for field in form %}
+            {% if field.name in 'usuario nombre apellidos telefono email cif provincia localidad' %}
+              <div class="form-group mb-3">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                  <div class="text-danger">{{ field.errors }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-md-6">
+          {% for field in form %}
+            {% if field.name in 'calle numero_calle portal escalera piso puerta codigo_postal password1 password2' %}
+              <div class="form-group mb-3">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                  <div class="text-danger">{{ field.errors }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+        <a href="{% url 'home' %}" class="btn btn-secondary ms-2">Cancelar</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

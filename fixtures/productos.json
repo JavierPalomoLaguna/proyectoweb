@@ -1,0 +1,226 @@
+[
+{
+  "model": "tienda.productos",
+  "pk": 1,
+  "fields": {
+    "nombre": "Monitor LED 24\" Full HD",
+    "caracteristicas": "Tamaño de pantalla de 23,8\" perfecto para el espacio de trabajo de programación, codificación y diseño de páginas web La pantalla antiparpadeo con certificación TÜV y menos luz azul protege la vista y mantiene los ojos sanos Tasa de refresco de 100 Hz y 1ms (MPRT) de tiempo de respuesta que ofrece una mejor experiencia visual Comprueba si tus ojos necesitan un descanso con la función Eye-Q check El software ergonómico, Display Kit, te proporciona la herramienta más cómoda, el color y el modo de visualización adecuados mientras trabajas con él a diario. Disfruta de un brillo y una oscuridad intensos con una relación de contraste de 4000:1 Mantén la flexibilidad para tus diferentes dispositivos con múltiples fuentes de entrada: puerto HDMI™ y puerto DP Montaje y desmontaje del dispositivo sin herramientas Diseño estándar para montaje VESA",
+    "foto_principal": "tienda/principal_monitor.jpg",
+    "precio_sin_iva": "68.31",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 12,
+    "categoria": 1,
+    "created": "2025-10-08T07:49:53.519Z",
+    "updated": "2025-10-21T09:00:28.247Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 2,
+  "fields": {
+    "nombre": "Silla ergonómica con soporte lumbar",
+    "caracteristicas": "Silla de oficina de malla de poliéster altamente elástica, resistente al desgaste y transpirable, promueve una buena circulación del aire, absorbe el sudor y la humedad y le brinda una sensación de frescura y una postura cómoda para sentarse, lo que le permite trabajar más concentrado y relajado.",
+    "foto_principal": "tienda/principal_silla_ergonomica.jpg",
+    "precio_sin_iva": "132.22",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 7,
+    "categoria": 2,
+    "created": "2025-10-08T08:00:57.026Z",
+    "updated": "2025-10-21T09:05:02.463Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 3,
+  "fields": {
+    "nombre": "Archivador metálico 3 cajones",
+    "caracteristicas": "Este archivador con 3 cajones es un auténtico todoterreno. El armario pondrá orden en el despacho, la oficina o en el taller. Debido al moderno sistema de armarios archivadores de tectake, todos sus documentos importantes y demás objetos de valor estarán bien almacenados gracias a sus compartimentos con cerradura. Este armario archivador tiene un diseño atemporal y es adecuado para cualquier habitación. Práctico: Los cajones están equipados con extensión completa. Llévese hoy a casa este armario archivador de alta calidad con 3 cajones de tectake.",
+    "foto_principal": "tienda/principal_archivador.jpg",
+    "precio_sin_iva": "40.87",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 20,
+    "categoria": 3,
+    "created": "2025-10-08T08:12:02.892Z",
+    "updated": "2025-10-21T09:06:35.854Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 4,
+  "fields": {
+    "nombre": "Lámpara LED de escritorio con brazo articulado",
+    "caracteristicas": "Transforma cualquier espacio con la elegancia de la Lámpara de mesa LED en hierro Valtyn. Este diseño minimalista, con líneas rectas, se adapta perfectamente a ambientes contemporáneos. Su estructura de hierro le aporta robustez y durabilidad, mientras que la base cuadrada garantiza estabilidad sobre cualquier superficie. La pantalla alargada complementa su apariencia sofisticada y funcional. Esta lámpara cuenta con tres temperaturas de color: luz cálida, luz neutra y luz fría, adaptándola a tus necesidades de iluminación. Con una potencia de 5W, asegura un bajo consumo energético. No solo destaca por su estética, sino también por su funcionalidad. Su altura es regulable, pudiendo ajustarse desde 92 cm hasta 54 cm. Esto la convierte en una opción versátil para diferentes entornos y propósitos, garantizando una luz adecuada para leer, estudiar o trabajar, ofreciendo una experiencia visual óptima. Incluye un cable en PVC. La combinación de materiales y su diseño refinado hacen de Valtyn una elección ideal para espacios que buscan un toque de modernidad y funcionalidad.  Aconsejamos limpiarla con un paño húmedo y evitar el uso de productos químicos.",
+    "foto_principal": "tienda/principal-lampara-de-mesa-led.jpg",
+    "precio_sin_iva": "41.28",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 15,
+    "categoria": 4,
+    "created": "2025-10-08T08:19:33.370Z",
+    "updated": "2025-10-21T09:08:01.787Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 5,
+  "fields": {
+    "nombre": "Reloj Pomodoro digital con temporizador",
+    "caracteristicas": "Temporizador Visual de Rotación: Este temporizador de cubo tiene una pantalla digital con una barra de progreso roja que aparece en la pantalla durante el cronometraje, y la pantalla visual clara puede permitirle realizar un seguimiento del tiempo restante de un vistazo. Este temporizador tiene 4 ajustes de tiempo rápido: 5/10/25/50 minutos. Sólo tiene que darle la vuelta al temporizador para que el lado correspondiente al tiempo quede hacia arriba, y podrá iniciar la cuenta atrás Cuenta Atrás Personalizada: Este temporizador puede personalizar y almacenar 4 conjuntos de tiempo de cuenta atrás. Sólo tiene que voltear el temporizador a cualquier página de número, pulsación larga “Set” y establecer el tiempo, la próxima vez que voltear a esa página de número, el tiempo de cuenta atrás será el mismo que el último tiempo establecido. Temporizador Recargable Compacto, este temporizador pomodoro es recargable Tipo-C, conveniente y de larga duración. Se puede utilizar durante unos 100 días después de estar completamente cargado. Con un tamaño de 5*5*3,8 cm, este temporizador es compacto y portátil, puede llevarlo a cualquier lugar que necesite, como el aula, la oficina, la biblioteca y el gimnasio. 2 Modo de Alarma, este temporizador tiene 2 modos de volumen: silencio y timbre(Pulsación larga del botón Arriba para cambiar de modo). Puede ajustar el recordatorio de alarma de acuerdo a sus necesidades. Ya sea que esté trabajando y estudiando solo en casa o en un lugar público como un aula o una biblioteca, este temporizador le permite encontrar el recordatorio adecuado",
+    "foto_principal": "tienda/principal-reloj.jpg",
+    "precio_sin_iva": "6.94",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 30,
+    "categoria": 5,
+    "created": "2025-10-08T08:29:05.311Z",
+    "updated": "2025-10-21T09:08:54.766Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 6,
+  "fields": {
+    "nombre": "Teclado mecánico retroiluminado RGB",
+    "caracteristicas": "Con opciones de conexión por cable, 2.4G inalámbrico y Bluetooth, el Pyros V2 permite alternar entre dispositivos y mantener una conexión estable en cualquier entorno. Los switches integrados lineales Outemu Red proporcionan una experiencia de tecleo rápida y fluida, perfecta para gaming y escritura continua sin interrupciones. Teclas retroiluminadas con RGB para darle un toque único a tu setup, con opciones de efectos visuales que se sincronizan con otros dispositivos compatibles.",
+    "foto_principal": "tienda/principal-teclado-blanco.jpg",
+    "precio_sin_iva": "16.52",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 25,
+    "categoria": 1,
+    "created": "2025-10-08T13:34:49.581Z",
+    "updated": "2025-10-21T09:09:45.669Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 7,
+  "fields": {
+    "nombre": "Auriculares inalámbricos con cancelación de ruido",
+    "caracteristicas": "Descubre los Auriculares Silence 4, diseñados para quienes buscan calidad, comodidad y tecnología avanzada en cada momento. Perfectos para acompañarte en tu día a día, tanto en el trabajo como en tus sesiones de juego o relax.",
+    "foto_principal": "tienda/principal-auriculares.jpg",
+    "precio_sin_iva": "19.00",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 18,
+    "categoria": 1,
+    "created": "2025-10-08T13:37:52.481Z",
+    "updated": "2025-10-21T09:10:43.770Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 8,
+  "fields": {
+    "nombre": "Hub USB-C multipuerto 7 en 1",
+    "caracteristicas": "TRANSFERENCIAS ULTRARRÁPIDAS – Mueve archivos en un instante con nuestro hub USB C SATECHI, equipado con dos puertos USB A 3.2 Gen 2 (10 Gbps), capaces de transferir 3 000 imágenes JPEG en solo 1 minuto. Utiliza chipsets Parade Technologies de Taiwán para mayor seguridad. Temperatura de uso: 30–50 °C. CONECTIVIDAD 4K ULTRANÍTIDA – Disfruta de vídeo 4K a 60 Hz conectando un cable HDMI 2.0+ a nuestro hub USB C. Perfecto para streaming, presentaciones o ampliar tu espacio de trabajo con definición excepcional. CARGA POTENTE Y TRANSFERENCIAS ULTRARRÁPIDAS – Mantén tus dispositivos con carga rápida y estable: este hub USB-C admite 100 W de entrada y entrega 80 W de salida para tu portátil y periféricos. Transfiere archivos al instante con sus 2 puertos USB-A 3.2 Gen 2 (10 Gbps), capaces de mover 3 000 imágenes JPEG en 1 min. Incorpora chipsets Parade",
+    "foto_principal": "tienda/principal-hub.jpg",
+    "precio_sin_iva": "5.78",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 40,
+    "categoria": 1,
+    "created": "2025-10-08T13:41:06.236Z",
+    "updated": "2025-10-21T09:11:54.967Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 9,
+  "fields": {
+    "nombre": "Mesa de escritorio ajustable en altura",
+    "caracteristicas": "Como una coreografía silenciosa entre forma y funcionalidad, el Escritorio elevable eléctrico rectangular 120x60 cm con función de memoria en madera y hierro Serpi ha sido diseñado para transformar el acto de trabajar en un ritual consciente de bienestar. De inspiración escandinava pero con alma tecnológica, esta pieza tan singular se alza como una declaración de intenciones para quienes conciben el espacio de trabajo como una extensión de su estilo de vida. Este modelo cuenta con un tablero elaborado en madera contrachapada de eucalipto, recubierto por una capa de melamina y embellecido con un acabado barnizado mate, combinando la calidez con la sobriedad técnica. Sus tonalidades neutrales no solo armonizarán con cualquier ambiente contemporáneo, sino que lo elevarán ofreciendo una base tan serena como inspiradora. Sus patas de hierro cuentan con tacos de plástico ajustables y un resistente acabado de pintura en polvo, desplegándose en una elegante forma de T invertida que aporta equilibrio y libertad de movimiento. Gracias a su sistema de elevación eléctrica con deslizamiento suave y silencioso (< 50 dB), ajustable desde los 72 cm hasta los 118 cm, Serpi te acompañará tanto en los momentos en los que necesites trabajar sentado como en aquellos más dinámicos en los que prefieras estar de pie. El panel de control incluye una pantalla LED con botones intuitivos que te permitirán memorizar hasta 3 alturas personalizadas, haciendo que el cambio de postura fluya con la misma naturalidad con la que cambias de playlist. El sistema de organización de cables, mediante discretos ganchos, garantiza un entorno visual limpio, donde la concentración se convierte en placer. Y como en Sklum prestamos atención al detalle, lo hemos equipado con un sistema anticolisión que detecta de manera inteligente los posibles obstáculos. Ideal para home offices con carácter, estudios creativos o espacios educativos que valoran la versatilidad, con Serpi el back to work ya no será una vuelta al deber, sino el regreso a un espacio donde la funcionalidad se alía con la inspiración.",
+    "foto_principal": "tienda/principal-mesa.jpg",
+    "precio_sin_iva": "61.98",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 12,
+    "categoria": 2,
+    "created": "2025-10-08T13:47:25.669Z",
+    "updated": "2025-10-21T09:13:01.266Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 10,
+  "fields": {
+    "nombre": "Estantería modular de madera",
+    "caracteristicas": "Estantería mediana de madera de pino macizo, modelo DINAMIC, sin barniz, de color madera natural. Medidas 140 x 36 x 33 cm (alto x ancho x fondo). Cada balda soporta un peso máximo de 50 Kg . Cuenta con el sello PEFC, que certifica que la madera utilizada en su composición proviene de bosques gestionados de manera sostenible y respetuosa con el medioambiente.  Madera maciza de pino. Altura estantes regulable. Fácil montaje. Producto natural. Madera bosques sostenibles",
+    "foto_principal": "tienda/principal-estanteria.jpg",
+    "precio_sin_iva": "66.11",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 21,
+    "categoria": 2,
+    "created": "2025-10-08T14:01:24.943Z",
+    "updated": "2025-10-21T09:14:03.973Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 11,
+  "fields": {
+    "nombre": "Reposapiés ergonómico antideslizante",
+    "caracteristicas": "REPOSAPIES OFICINA ERGONÓMICO: te ayuda a mejorar la postura manteniendo los pies y las piernas elevados. Descansa tus piernas en la oficina mientras trabajas, o en casa después de un largo día, regalo ideal para escritorio de oficina y como accesorio para jugadores de PC. El uso regular de nuestro reposapies en el trabajo también puede ayudar a aliviar el estrés y el dolor de espalda, reducir la fatiga y hacer que tu día sea más enérgico. 6 ALTURAS AJUSTABLES: nuestro reposapies de oficina DomuStile cuenta con 6 alturas ajustables para una posición perfecta y mejor adaptación a tus necesidades. Nuestro reposapiés para debajo del escritorio se puede ajustar según la altura de la mesa y de la silla, para una cómoda posición. La altura se puede ajustar girando los tornillos a ambos lados del reposapies escritorio lo cual es fácil de operar.",
+    "foto_principal": "tienda/Principal-reposapies.jpg",
+    "precio_sin_iva": "14.88",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 22,
+    "categoria": 2,
+    "created": "2025-10-09T09:45:31.445Z",
+    "updated": "2025-10-21T09:15:16.647Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 12,
+  "fields": {
+    "nombre": "Caja organizadora con separadores ajustables",
+    "caracteristicas": "CONTENEDOR 3 NIVELES ALMACENAMIENTO APILABLE: Esta caja compartimentos tiene tres bandejas que se puede juntar. Cada bandeja puede tener un mínimo de 1 compartimento y un máximo de 10. Cuando se han usado todas las bandejas y separadores, esta caja de plastico con compartimentos puede tener hasta 30 compartimentos. Completamente ensamblado mide 24,5cm de Largo x 16,5cm de Ancho x 18,5cm de Alto. Los separadores grandes del medio miden: 24,4cm x 5,3cm. Los separadores pequeños miden 7,8cm x 5,3cm BANDEJAS DE CIERRE A PRESIÓN PARA MAYOR ALMACENAMIENTO: Con tres bandejas que se unen una sobre la otra, 3 grandes separadores que van debajo del medio de cada bandeja y 24 separadores pequeños para las ranuras, puede apilar esta caja tan alto como quiera y crear compartimentos de tamaños diferentes para ajustarse a sus necesidades. Esta caja organizadora compartimentos es excelente para almacenar juguetes pequeños, accesorios de costura, joyas, cuentas, aparejos de pesca y anzuelos",
+    "foto_principal": "tienda/pincipal-caja.jpg",
+    "precio_sin_iva": "10.00",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 50,
+    "categoria": 3,
+    "created": "2025-10-09T09:54:51.902Z",
+    "updated": "2025-10-21T08:41:38.370Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 13,
+  "fields": {
+    "nombre": "Panel para Herramientas de Metal 1200 x 600 mm",
+    "caracteristicas": "Perfecto para colgar en la pared o encima de bancos de trabajo como nuestros productos 701798 y 701799 Medidas del panel (total): 1200 x 60 mm dividido en tres paneles de 400 x 600 mm cada uno Su distribucion en tres partes permite ponerlos todos corridos, individuales o en la forma que mas convenga El método clásico y perfecto de tener todas nuestras herramientas organizadas y siempre a mano. Combinado con un carro de herramientas y un banco de trabajo tendrás todo lo necesario para tener un espacio de trabajo limpio, seguro y organizado",
+    "foto_principal": "tienda/principalPanelPerforado.jpg",
+    "precio_sin_iva": "33.05",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 100,
+    "categoria": 3,
+    "created": "2025-10-21T09:28:40.761Z",
+    "updated": "2025-10-21T09:28:40.761Z"
+  }
+},
+{
+  "model": "tienda.productos",
+  "pk": 14,
+  "fields": {
+    "nombre": "Organizador de cables con cierre de velcro",
+    "caracteristicas": "Limpieza y orden: Di adiós a los cables desordenados en tu casa yoficina. Esta manga de protecciónes ideal para organizar tus cables, y que tucasa tenga un aspecto más limpio y ordenado Uso cómodo y personalizable: Con una longitud total de 80 pulgadas y un ancho de 4.25 pulgadas,Puedes realizar orificios en su superficie para una precisa salida del cable donde requieras.Puedes combinar las mangas para agrupar diferentes cables Haga que su casa u oficina estén limpias: La manga para gestión de cables YOSH cuenta con una longitud de 80 pulgadas. Se puede cortar en manguitos de diferentes tamaños para una gran variedad de aplicaciones Seguridad y protección: Fabricada con neopreno de gran resistencia y alta flexibilidad, protegetus cables del agua, el polvo, las pisadas y los mordiscos de animales",
+    "foto_principal": "tienda/principal-velcro.jpg",
+    "precio_sin_iva": "8.18",
+    "iva_porcentaje": "21.00",
+    "disponibilidad": true,
+    "stock": 100,
+    "categoria": 3,
+    "created": "2025-10-22T15:51:17.780Z",
+    "updated": "2025-10-22T15:53:33.248Z"
+  }
+}
+]

@@ -1,0 +1,59 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% block content %}
+  <div class="container mt-5 zona-cliente">
+    <h2>Editar mis datos</h2>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert-custom">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="row">
+        <!-- Columna izquierda: 8 campos -->
+        <div class="col-md-6">
+          {% for field in form %}
+            {% if field.name in 'usuario nombre apellidos telefono email cif provincia localidad' %}
+              <div class="form-group mb-3">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                  <div class="text-danger">{{ field.errors }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- Columna derecha: 8 campos -->
+        <div class="col-md-6">
+          {% for field in form %}
+            {% if field.name in 'calle numero_calle portal escalera piso puerta codigo_postal' %}
+              <div class="form-group mb-3">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                  <div class="text-danger">{{ field.errors }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        <a href="{% url 'zona_cliente' %}" class="btn btn-secondary ms-2">Cancelar</a>
+      </div>
+    </form>
+
+    <hr>
+    <p>¿Quieres cambiar tu contraseña? <a href="{% url 'solicitar_reset' %}">Haz clic aquí</a>.</p>
+  </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+  <h4 class="mb-4" style="color: white;">Redirigiendo al TPV virtual de Redsys…</h4>
+
+  <form id="redsys-form" method="post" action="https://sis-t.redsys.es:25443/sis/realizarPago">
+    <input type="hidden" name="Ds_SignatureVersion" value="HMAC_SHA256_V1">
+    <input type="hidden" name="Ds_MerchantParameters" value="{{ encoded_params }}">
+    <input type="hidden" name="Ds_Signature" value="{{ signature }}">
+    <noscript>
+      <button type="submit" class="btn btn-success" style="color: white;">Pagar ahora</button>
+    </noscript>
+  </form>
+
+  <script>
+    console.log("Intentando enviar formulario...");
+    setTimeout(function() {
+      console.log("Enviando formulario manualmente");
+      
+      document.getElementById('redsys-form').submit();
+      
+    }, 1000);
+</script>
+</div>
+{% endblock %}
+
+

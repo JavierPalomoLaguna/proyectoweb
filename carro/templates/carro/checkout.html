@@ -1,0 +1,76 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-white">Resumen del pedido</h2>
+
+  {% if carro %}
+    <ul class="list-group">
+      {% for key, item in carro.items %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          {{ item.nombre }} ({{ item.cantidad }} x {{ item.precio|floatformat:2 }} €)
+          <span>Total = {{ item.total|floatformat:2 }}€</span>
+        </li>
+      {% endfor %}
+      
+      <!-- ✅ NUEVO: LÍNEA DE GASTOS DE ENVÍO -->
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Gastos de envío:
+        <span>
+          {% if envio_gratis_carro %}
+            <span class="text-success">Gratis</span>
+          {% else %}
+            {{ gastos_envio_carro|floatformat:2 }} €
+          {% endif %}
+        </span>
+      </li>
+      
+      <!-- ✅ NUEVO: INFORMACIÓN SOBRE ENVÍO GRATIS -->
+      {% if not envio_gratis_carro %}
+      <li class="list-group-item bg-light">
+        <small class="text-muted">
+          <i class="fas fa-info-circle"></i>
+          ¡Te faltan {{ falta_para_envio_gratis|floatformat:2 }} € para envío gratis!
+          (En pedidos superiores a {{ umbral_envio_gratis|floatformat:2 }} €)
+        </small>
+      </li>
+      {% endif %}
+      
+      <!-- ✅ ACTUALIZADO: TOTAL CON ENVÍO -->
+      <li class="list-group-item d-flex justify-content-between align-items-center bg-warning">
+        <strong>TOTAL DEL PEDIDO:</strong>
+        <strong class="h5">{{ total_con_envio_carro|floatformat:2 }} €</strong>
+      </li>
+    </ul>
+    
+    <div class="mt-4 text-end">
+      {% if request.session.cliente_id %}
+        <form method="post" action="{% url 'confirmar_pedido' %}">
+          {% csrf_token %}
+          <label for="metodo_pago" class="form-label text-white">Método de pago:</label>
+          <select name="metodo_pago" id="metodo_pago" class="form-select mb-3">
+            <option value="tarjeta">Tarjeta</option>
+            <option value="bizum">Bizum</option>
+          </select>
+          <button type="submit" class="btn btn-success">Confirmar pedido</button>
+        </form>
+        <a href="{% url 'editar_datos_cliente' %}" class="badge bg-warning text-dark fw-bold" style="font-size: 1rem; text-decoration: none;"> ✏️ Modificar datos de usuario</a>
+      {% else %}
+        <a href="{% url 'tramitar_pedido' %}" class="btn btn-primary">Confirmar pedido</a>
+      {% endif %}
+    </div>
+  
+  {% else %}
+  <div class="alert alert-info">Tu carrito está vacío.</div>
+  {% endif %}
+  {% if messages %}
+  <div class="mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

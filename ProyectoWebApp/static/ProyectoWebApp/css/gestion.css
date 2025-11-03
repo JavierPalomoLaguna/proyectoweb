@@ -1,0 +1,419 @@
+body {
+  font-family: 'Lora';
+  background: linear-gradient(rgba(47, 23, 15, 0.35), rgba(47, 23, 15, 0.35)), url("../img/bg_main.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;  
+}
+.card-body {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway';
+}
+
+p {
+  line-height: 1.75;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.site-heading {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: 'Raleway';
+}
+
+.site-heading .site-heading-upper {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.site-heading .site-heading-lower {
+  font-size: 5rem;
+  font-weight: 100;
+  line-height: 4rem;
+}
+
+.page-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  text-transform: uppercase;
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom:.5rem;
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.section-heading .section-heading-under {
+  display: block;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 300;
+  margin-top:.5rem;
+}
+
+.bg-faded {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#mainNav {
+  background-color: rgba(190, 150, 110, 0.85);
+  font-family: 'Raleway';
+}
+
+#mainNav .navbar-brand {
+  color: #ffffff;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: underline;
+  }
+  #mainNav .navbar-nav .nav-item.active .nav-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+.btn-xl {
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.intro {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .intro .intro-img {
+    width: 75%;
+    float: left;
+  }
+  .intro .intro-text {
+    left: 600;
+    width: 60%;
+    margin-top: 3rem;
+    background-color: rgba(190, 150, 110, 0.85);
+    color: cornsilk;
+    position: absolute;
+  }
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 45%;
+  }
+}
+
+.cta {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgba(245, 245, 240);
+}
+
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(190, 150, 110, 0.85);
+  color: cornsilk;
+}
+
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+.cta .cta-innerv {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 992px) {
+  .about-heading .about-heading-img {
+    position: relative;
+    z-index: 0;
+  }
+  .about-heading .about-heading-content {
+    margin-top: -5rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-item .product-item-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -3rem;
+  }
+  .product-item .product-item-img {
+    position: relative;
+    z-index: 0;
+    max-width: 60vw;
+  }
+  .product-item .product-item-description {
+    position: relative;
+    z-index: 1;
+    margin-top: -3rem;
+    max-width: 50vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .list-hours {
+    width: 50%;
+    font-size: 1.1rem;
+  }
+}
+
+.address strong {
+  font-size: 1.2rem;
+}
+
+.footer {
+  background-color: rgba(190, 150, 110, 0.85);
+}
+
+.btn {
+  box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
+}
+
+.font-weight-light {
+  font-weight: 100 !important;
+}
+
+.mbtm {
+  padding-top: 5rem;
+}
+
+.mbt {
+  padding-top: 2rem;
+}
+
+.mbt1 {
+  padding-top: 1.25rem;
+}
+
+a.link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+a.link:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.section-content {
+  font-family: 'Lora' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 28px !important;
+}
+
+ul.errorlist {
+  padding-top: .75rem;
+  font-style: italic;
+  color: red;
+}
+
+.linksCategoria {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+.linksCategoria:hover {
+  color: red !important;
+  text-decoration: none !important;
+}
+
+form input,
+form textarea {
+  width: 100% !important;
+  padding: 8px !important;
+  margin-top: 4px !important;
+  margin-bottom: 12px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+}
+
+form label {
+  font-weight: bold !important;
+  color: #333 !important;
+}
+
+form .btn {
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+}
+
+.login-box {
+  max-width: 380px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #f8f9fa; /* fondo gris claro */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #212529;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.login-box input.form-control {
+  height: 36px;
+  font-size: 0.9rem;
+}
+
+.login-links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Zona cliente */
+.zona-cliente {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.zona-cliente h2,
+.zona-cliente h4 {
+  color: #f5f5f5;
+  margin-bottom: 1rem;
+}
+
+.zona-cliente ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.zona-cliente li {
+  margin-bottom: 0.5rem;
+}
+
+.zona-cliente a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.zona-cliente a:hover {
+  text-decoration: underline;
+}
+
+.zona-cliente label {
+  color: #f5f5f5; /* o el tono beige que uses */
+}
+
+.zona-cliente form label {
+  color: #f5f5f5 !important;
+}
+
+/* Mensajes */
+.alert-custom {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #1b5e20;
+}
+
+/* imagen tienda */
+.hero {
+  position: relative;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh; 
+  background-image: url('../img/nombre_tienda.png');
+  background-size: 50% auto; 
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.2rem 2.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-shadow: 0.6px 0.6px 0 rgba(0, 0, 0, 0.25); /* simula grosor */
+}

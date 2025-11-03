@@ -1,0 +1,7 @@
+asgiref==3.7.2
+Django==5.0.6
+python-decouple==3.8
+psycopg2-binary==2.9.9
+sqlparse==0.4.4
+tzdata==2024.1
+dj-database-url==3.0.1

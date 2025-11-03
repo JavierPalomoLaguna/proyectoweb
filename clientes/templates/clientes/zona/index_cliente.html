@@ -1,0 +1,26 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% block content %}
+  <div class="zona-cliente">
+    <h2>Zona privada del cliente</h2>
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert-custom">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <p>Bienvenido, {{ cliente.nombre }} {{ cliente.apellidos }}.</p>
+
+    <div class="mt-4">
+      <h4>Opciones disponibles:</h4>
+      <ul>
+        <li><a href="{% url 'editar_datos_cliente' %}">Editar mis datos</a></li>
+        <li><a href="{% url 'ver_pedidos_cliente' %}">Histórico de pedidos</a></li>
+        <li><a href="{% url 'logout_cliente' %}">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

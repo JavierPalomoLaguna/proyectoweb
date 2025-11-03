@@ -1,0 +1,12 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="alert alert-success text-center" style="background-color: #198754 !important; border-color: #198754 !important;">
+    <h4 class="mb-3" style="color: white !important;">✅ Pedido confirmado</h4>
+    <p style="color: white !important;">Tu pedido ha sido registrado correctamente. Gracias por tu compra.</p>
+    <p style="color: white !important;">Método de pago seleccionado: <strong style="color: white !important;">{{ metodo_pago|title }}</strong></p>
+    <a href="{% url 'tienda' %}" class="btn btn-primary mt-3">Volver a la tienda</a>
+  </div>
+</div>
+{% endblock %}
