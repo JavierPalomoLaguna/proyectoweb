@@ -32,7 +32,7 @@ DEBUG = True
 #ALLOWED_HOSTS = []
 
 #para quitar cuando se haya probado el TPV
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.dev']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.dev', '.onrender.com']
 CSRF_TRUSTED_ORIGINS = ["https://uncascaded-arturo-delightsomely.ngrok-free.dev"]
 
 # Application definition
