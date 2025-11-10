@@ -214,9 +214,18 @@ if ENV == 'production':
     CSRF_TRUSTED_ORIGINS = ['https://codigovivostudio.cloud', 'https://www.codigovivostudio.cloud']
 else:
     DEBUG = True
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.dev']
-    CSRF_TRUSTED_ORIGINS = ['https://*.ngrok-free.dev']
-
+    ALLOWED_HOSTS = [
+        'localhost',
+        '127.0.0.1',
+        '.ngrok-free.dev',
+        'codigovivostudio.cloud',
+        'www.codigovivostudio.cloud'
+    ]
+    CSRF_TRUSTED_ORIGINS = [
+        'https://*.ngrok-free.dev',
+        'https://codigovivostudio.cloud',
+        'https://www.codigovivostudio.cloud'
+    ]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
