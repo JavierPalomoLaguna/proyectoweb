@@ -58,21 +58,33 @@
 <body class="index-layout">
   <header> 
     <div class="container"> 
-      <nav> 
-        <div class="logo">Código Vivo Studio</div> 
-        <div class="nav-links"> <a href="/index/">Inicio</a> 
-          <a href="/servicios/">Servicios</a> <a href="/tienda/">Tienda</a> 
-          <a href="/contacto/">Contacto</a> <a href="/blog/">Blog</a> 
+        <nav> 
+          <div class="logo">Código Vivo Studio</div> 
+            <div class="menu-toggle" id="menuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="nav-links" id="navLinks"> 
+              <a href="/">Inicio</a> 
+              <a href="/servicios/">Servicios</a> 
+              <a href="/tienda/">Tienda</a> 
+              <a href="/contacto/">Contacto</a> 
+              <a href="/blog/">Blog</a> 
+            </div> 
+          </nav> 
         </div> 
-      </nav> 
-    </div> 
   </header> 
   <section class="container" style="text-align: center; padding: 80px 0;"> 
     <div style="max-width: 900px; margin: 0 auto;"> 
       <h2 style="font-size: 2.2rem; color: #0a1a2f; margin-bottom: 30px;"> Ejemplos funcionales adaptables a tu negocio </h2> 
       <p style="font-size: 1.2rem; color: #555; line-height: 1.8;"> Las secciones de 
-        <strong>servicios, tienda, contacto y blog</strong> 
-        son ejemplos funcionales que puedes adaptar a tu negocio. Cada app está diseñada para integrarse y escalar según tus necesidades. Especialmente útil para 
+        <strong><a href="/servicios/" style="font-weight: bold; color: #000; text-decoration: none;">servicios</a>, 
+          <a href="/tienda/" style="font-weight: bold; color: #000; text-decoration: none;">tienda</a>, 
+          <a href="/contacto/" style="font-weight: bold; color: #000; text-decoration: none;">contacto</a> y 
+          <a href="/blog/" style="font-weight: bold; color: #000; text-decoration: none;">blog</a></strong> 
+        son ejemplos funcionales que puedes adaptar a tu negocio. Cada app está diseñada para integrarse y 
+        escalar según tus necesidades. Especialmente útil para 
         <strong>comercios, restaurantes o profesionales
       </strong> que necesitan gestionar productos, reservas, pedidos o comunicación con clientes de forma clara y eficiente. 
     </p> 
@@ -126,7 +138,38 @@
     <footer> 
       <div class="container"> 
         <p>&copy; 2025 Código Vivo Studio. Todos los derechos reservados.</p> 
-      </div> 
+      </div>
+      <p class="m-0 mt-3 small">
+        <a href="/admin/" class="text-muted" title="Panel de administración">⚙️⚙️⚙️</a>
+      </p> 
     </footer> 
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    const navLinksItems = navLinks.querySelectorAll('a');
+    navLinksItems.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+    
+    // Cerrar menú al hacer clic fuera de él
+    document.addEventListener('click', function(event) {
+      if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  });
+  </script>
   </body> 
   </html>

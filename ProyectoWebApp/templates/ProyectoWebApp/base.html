@@ -41,25 +41,44 @@
 
 <body class="base-layout">
       
+    <!-- Para escritorio -->
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-          
-          {% if request.path|slice:":7" == "/tienda" %}
-          
+        {% if request.path|slice:":7" == "/tienda" %}
             <div style="text-align: right; margin-top: 20px; margin-right: 30px;">
-              {% if cliente %}
-                <a href="{% url 'zona_cliente' %}" class="badge bg-warning text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">👤 {{ cliente.usuario }}</a>
-                <a href="/clientes/logout/" class="badge bg-success text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">Salir</a>
-              {% else %}
-                <a href="/clientes/tramitar/" class="badge bg-warning text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">👤 Iniciar sesión</a>
-              {% endif %}
-              <a href="{% url 'ver_carro' %}" class="badge bg-warning text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">
-                🛒 Carrito {% include 'carro/widget_carro.html' %}
-              </a>
+                {% if cliente %}
+                    <a href="{% url 'zona_cliente' %}" class="badge bg-warning text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">👤 {{ cliente.usuario }}</a>
+                    <a href="/clientes/logout/" class="badge bg-success text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">Salir</a>
+                {% else %}
+                    <a href="/clientes/tramitar/" class="badge bg-warning text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">👤 Iniciar sesión</a>
+                {% endif %}
+                <a href="{% url 'ver_carro' %}" class="badge bg-warning text-dark fw-bold" style="font-size: 1rem; text-decoration: none;">
+                    🛒 Carrito {% include 'carro/widget_carro.html' %}
+                </a>
             </div>
-          
-          {% endif %}
+        {% endif %}
     </h1>
-    
+
+    <!-- Para móvil - versión simplificada -->
+    <div class="d-lg-none bg-dark py-2">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                {% if request.path|slice:":7" == "/tienda" %}
+                    <div class="d-flex gap-1">
+                        {% if cliente %}
+                            <a href="{% url 'zona_cliente' %}" class="btn btn-warning btn-sm py-1">👤</a>
+                            <a href="/clientes/logout/" class="btn btn-success btn-sm py-1">Salir</a>
+                        {% else %}
+                            <a href="/clientes/tramitar/" class="btn btn-warning btn-sm py-1">👤</a>
+                        {% endif %}
+                    </div>
+                    
+                    <a href="{% url 'ver_carro' %}" class="btn btn-warning btn-sm py-1">
+                        🛒 {% include 'carro/widget_carro.html' %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
      
  <!-- Navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">

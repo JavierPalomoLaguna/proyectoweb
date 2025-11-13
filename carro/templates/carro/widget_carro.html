@@ -1,8 +1,4 @@
-<!--
-{% if productos_total_carro > 0 %}
-  ({{ productos_total_carro }})
-{% endif %}
--->
+
 {% if productos_total_carro > 0 %}
   <div class="text-end me-3">
     <a href="{% url 'ver_carro' %}" class="btn btn-outline-light position-relative" title="Ver carrito">

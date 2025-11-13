@@ -1,36 +1,94 @@
-
-{% extends 'ProyectoWebApp/base.html' %}
 {% load static %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Código Vivo Studio</title>
+    <link href="{% static 'ProyectoWebApp/css/gestion.css' %}" rel="stylesheet">
+</head>
+<body class="index-layout">
+    <header> 
+        <div class="container"> 
+            <nav> 
+                <div class="logo">Código Vivo Studio</div> 
+                <!-- BOTÓN HAMBURGUESA AÑADIDO -->
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- AÑADIDO id="navLinks" -->
+                <div class="nav-links" id="navLinks">
+                    <a href="/">Inicio</a>
+                    <a href="/servicios/">Servicios</a> 
+                    <a href="/tienda/">Tienda</a> 
+                    <a href="/contacto/">Contacto</a> 
+                    <a href="/blog/">Blog</a> 
+                </div> 
+            </nav> 
+        </div> 
+    </header>
 
-<section class="page-section">
-  <div class="container" style="max-width: 600px;">
-    <h2 class="text-center mb-4" style="color: white;">Formulario de contacto</h2>
-        {% if mensaje_exito %}
-        <div class="alert alert-success text-center" role="alert">
-        {{ mensaje_exito }}
+    <section class="contacto-section">
+        <div class="container">
+            <h2 class="contact-title">Formulario de contacto</h2>
+            
+            {% if mensaje_exito %}
+            <div class="alert-success">
+                {{ mensaje_exito }}
+            </div>
+            {% endif %}
+            
+            <form action="" method="post" class="contact-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ formulario.name.label_tag }}
+                    {{ formulario.name }}
+                </div>
+                <div class="form-group">
+                    {{ formulario.email.label_tag }}
+                    {{ formulario.email }}
+                </div>
+                <div class="form-group">
+                    {{ formulario.contenido.label_tag }}
+                    {{ formulario.contenido }}
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-contact">Enviar mensaje</button>
+                </div>
+            </form>
         </div>
-        {% endif %}
-    <form action="" method="post" class="p-4 shadow rounded bg-light">
-        {% csrf_token %}
-        <div class="form-group">
-            {{ formulario.name.label_tag }}
-            {{ formulario.name }}
-        </div>
-        <div class="form-group">
-            {{ formulario.email.label_tag }}
-            {{ formulario.email }}
-        </div>
-        <div class="form-group">
-            {{ formulario.contenido.label_tag }}
-            {{ formulario.contenido }}
-        </div>
-        <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-      
-    </form>
-  </div>
-</section>
+    </section>
 
-{% endblock %}
+    <footer> 
+        <div class="container"> 
+            <p>&copy; 2025 Código Vivo Studio. Todos los derechos reservados.</p> 
+        </div> 
+    </footer>
+    <script>
+        // JavaScript para el menú hamburguesa
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                const navLinksItems = navLinks.querySelectorAll('a');
+                navLinksItems.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
