@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.conf import settings
 from tienda.models import Productos
 from clientes.models import Cliente
 from .models import Pedido, LineaPedido, ConfiguracionEnvio
@@ -317,6 +318,12 @@ def pago_redsys(request):
     total_euros += float(pedido.gastos_envio)  # INCLUIR GASTOS DE ENVÍO
     total_centimos = int(total_euros * 100)
 
+    
+    if settings.ENV == 'production':
+        base_url = 'https://www.codigovivostudio.cloud'
+    else:
+        base_url = 'https://uncascaded-arturo-delightsomely.ngrok-free.dev'
+
     merchant_params = {
         "Ds_Merchant_Amount": str(total_centimos),
         "Ds_Merchant_Order": str(pedido.id).zfill(8),
@@ -324,9 +331,9 @@ def pago_redsys(request):
         "Ds_Merchant_Currency": "978",
         "Ds_Merchant_TransactionType": "0",
         "Ds_Merchant_Terminal": terminal,
-        "Ds_Merchant_MerchantURL": "https://uncascaded-arturo-delightsomely.ngrok-free.dev/ventas/notificacion/",
-        "Ds_Merchant_UrlOK": "https://uncascaded-arturo-delightsomely.ngrok-free.dev/ventas/exito/",
-        "Ds_Merchant_UrlKO": "https://uncascaded-arturo-delightsomely.ngrok-free.dev/ventas/error/",
+        "Ds_Merchant_MerchantURL": f"{base_url}/ventas/notificacion/",
+        "Ds_Merchant_UrlOK": f"{base_url}/ventas/exito/",
+        "Ds_Merchant_UrlKO": f"{base_url}/ventas/error/",
         "Ds_Merchant_ConsumerLanguage": "001"
     }
     

@@ -179,7 +179,41 @@ def historial_pedidos(request):
     if not cliente_id:
         return redirect('tramitar_pedido')
 
-    return render(request, 'clientes/zona/historial_pedidos.html')
+    # Obtener el cliente
+    cliente = Cliente.objects.get(id=cliente_id)
+    
+    # Obtener solo pedidos PAGADOS del cliente, ordenados por fecha descendente
+    from ventas.models import Pedido
+    pedidos = Pedido.objects.filter(
+        cliente=cliente, 
+        pagado=True
+    ).order_by('-fecha')
+    
+    return render(request, 'clientes/zona/historial_pedidos.html', {
+        'cliente': cliente,
+        'pedidos': pedidos
+    })
+
+def detalle_pedido(request, pedido_id):
+    cliente_id = request.session.get('cliente_id')
+    if not cliente_id:
+        return redirect('tramitar_pedido')
+
+    # Verificar que el pedido pertenece al cliente
+    from ventas.models import Pedido, LineaPedido
+    try:
+        pedido = Pedido.objects.get(id=pedido_id, cliente_id=cliente_id, pagado=True)
+    except Pedido.DoesNotExist:
+        messages.error(request, "Pedido no encontrado")
+        return redirect('historial_pedidos')
+
+    # Obtener las líneas del pedido
+    lineas_pedido = LineaPedido.objects.filter(pedido=pedido)
+    
+    return render(request, 'clientes/zona/detalle_pedido.html', {
+        'pedido': pedido,
+        'lineas_pedido': lineas_pedido
+    })
 
 def localidades_por_provincia(request):
     provincia = request.GET.get('provincia')

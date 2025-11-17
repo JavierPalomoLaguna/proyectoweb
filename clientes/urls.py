@@ -14,4 +14,5 @@ urlpatterns = [
     path('zona/historial/', views.historial_pedidos, name='historial_pedidos'),
     path('zona/pedidos/', views.historial_pedidos, name='ver_pedidos_cliente'),
     path('admin/clientes/localidades/', views.localidades_por_provincia, name='localidades_por_provincia'),
+    path('zona/pedido/<int:pedido_id>/', views.detalle_pedido, name='detalle_pedido'),
 ]
