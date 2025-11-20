@@ -20,7 +20,8 @@ from django.contrib.sitemaps.views import sitemap
 from ProyectoWebApp.sitemaps import StaticViewSitemap
 from django.views.generic import RedirectView  
 from django.conf import settings  
-from django.conf.urls.static import static  
+from django.conf.urls.static import static 
+from ProyectoWebApp import views 
 
 
 sitemaps = {
@@ -43,4 +44,5 @@ urlpatterns = [
     path('ventas/', include('ventas.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', RedirectView.as_view(url='/static/ProyectoWebApp/robots.txt', permanent=True)),
+    path('politica-cookies/', views.politica_cookies, name='politica_cookies'),
 ]

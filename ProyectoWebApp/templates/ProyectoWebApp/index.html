@@ -58,6 +58,9 @@
   <link href="{% static 'ProyectoWebApp/css/gestion.css' %}" rel="stylesheet">
   <link href="{% static 'ProyectoWebApp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   
+  <!-- ✅ ESTILOS DE COOKIES -->
+  <link href="{% static 'ProyectoWebApp/css/cookies.css' %}" rel="stylesheet">
+  
   <!-- FAVICON -->
   <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
 </head>
@@ -248,6 +251,12 @@
   <!-- FOOTER -->
   <footer style="background: #2c3e50; color: white; padding: 40px 0; text-align: center;"> 
     <div class="container"> 
+      <p class="m-0 mbt mt-3">
+        <!-- ✅ ENLACES ACTUALIZADOS CON LAS PÁGINAS REALES -->
+        <a href="/politica-privacidad/" class="link text-white">Política de privacidad</a> ·
+        <a href="/aviso-legal/" class="link text-white">Aviso legal</a> ·
+        <a href="/politica-cookies/" class="link text-white">Cookies</a>
+      </p>
       <p>&copy; 2025 Código Vivo Studio. Todos los derechos reservados.</p>
       <p class="m-0 mt-3 small" style="opacity: 0.7;">
         <a href="/admin/" class="text-light" title="Panel de administración">⚙️⚙️⚙️</a>
@@ -255,9 +264,73 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS NECESARIOS -->
+  <!-- ✅ SISTEMA DE COOKIES PROFESIONAL -->
+  <div id="cookiesBanner" class="cookies-banner">
+    <div class="cookies-content">
+      <div class="cookies-text">
+        <p>
+          🍪 Usamos cookies para mejorar tu experiencia. 
+          <a href="/politica-cookies/" class="ms-1">Más información</a>
+        </p>
+      </div>
+      <div class="cookies-buttons">
+        <button id="settingsCookies" class="btn-cookie btn-cookie-settings">Configurar</button>
+        <button id="acceptCookies" class="btn-cookie btn-cookie-accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ MODAL DE CONFIGURACIÓN COMPLETO -->
+  <div id="cookiesModal" class="cookies-modal">
+    <div class="cookies-modal-content">
+      <div class="cookies-modal-header">
+        <h3>Preferencias de Cookies</h3>
+      </div>
+      <div class="cookies-modal-body">
+        <div class="cookie-category">
+          <h4>
+            Cookies Esenciales
+            <label class="cookie-toggle disabled">
+              <input type="checkbox" checked disabled>
+              <span class="cookie-slider"></span>
+            </label>
+          </h4>
+          <p>Estas cookies son necesarias para el funcionamiento básico del sitio web y no se pueden desactivar.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <h4>
+            Cookies de Analíticas
+            <label class="cookie-toggle">
+              <input type="checkbox" id="analyticsCookies">
+              <span class="cookie-slider"></span>
+            </label>
+          </h4>
+          <p>Nos permiten entender cómo interactúas con el sitio web para mejorar nuestros servicios.</p>
+        </div>
+        
+        <div class="cookie-category">
+          <h4>
+            Cookies de Marketing
+            <label class="cookie-toggle">
+              <input type="checkbox" id="marketingCookies">
+              <span class="cookie-slider"></span>
+            </label>
+          </h4>
+          <p>Se utilizan para mostrarte contenido y anuncios relevantes basados en tus intereses.</p>
+        </div>
+      </div>
+      <div class="cookies-modal-footer">
+        <button id="saveCookieSettings" class="btn btn-primario">Guardar preferencias</button>
+        <button id="closeCookieModal" class="btn btn-outline-secondary ms-2">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
   <script src="{% static 'ProyectoWebApp/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'ProyectoWebApp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/cookies.js' %}"></script>
 
 </body> 
 </html>

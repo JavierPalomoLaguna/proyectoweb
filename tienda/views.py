@@ -104,5 +104,8 @@ def exportar_csv(request):
         "categoria_id": categoria_id,
     })
 
+def politica_cookies(request):
+    return render(request, 'politica_cookies.html')
+
 
     
