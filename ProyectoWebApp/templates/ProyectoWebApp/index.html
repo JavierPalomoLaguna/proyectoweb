@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T2HGNWQ7');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -30,28 +40,63 @@
   <!-- ✅ SCHEMA MARKUP MEJORADO -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Código Vivo Studio",
-    "url": "https://codigovivostudio.cloud",
-    "logo": "https://codigovivostudio.cloud{% static 'ProyectoWebApp/img/logo.png' %}",
-    "description": "Desarrollo web profesional y soluciones digitales para restaurantes y comercios",
-    "foundingDate": "2023",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tu Ciudad",
-      "addressRegion": "Tu Región",
-      "postalCode": "Código Postal",
-      "addressCountry": "ES"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+34-XXX-XXX-XXX",
-      "contactType": "customer service",
-      "areaServed": "ES",
-      "availableLanguage": "es"
-    }
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Código Vivo Studio",
+  "url": "https://codigovivostudio.cloud",
+  "logo": "https://codigovivostudio.cloud/static/ProyectoWebApp/img/logo.png",
+  "description": "Desarrollo web profesional y soluciones digitales a medida para comercios y restaurantes. Tiendas online, APIs y sistemas de gestión sin cuotas mensuales.",
+  "foundingDate": "2025",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madrid",
+    "addressRegion": "Comunidad de Madrid",
+    "postalCode": "28015",
+    "addressCountry": "ES"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+34-615613427",
+    "contactType": "customer service",
+    "areaServed": "ES",
+    "availableLanguage": ["es"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/javierpalomo",
+    "https://x.com/codigovivostudio",
+    "https://www.facebook.com/codigovivostudio"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Código Vivo Studio",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo web a medida",
+          "description": "Creación de páginas web adaptadas a tu negocio, funcionales y escalables."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tiendas online",
+          "description": "Desarrollo de tiendas online completas para comercios y restaurantes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Integración de APIs",
+          "description": "Conexión con servicios externos para automatizar procesos y centralizar información."
+        }
+      }
+    ]
   }
+}
   </script>
 
   <!-- ESTILOS -->
@@ -63,8 +108,24 @@
   
   <!-- FAVICON -->
   <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body class="index-layout">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2HGNWQ7"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
   <!-- NAVBAR DE BOOTSTRAP FUNCIONAL -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" style="background-color: rgba(17, 17, 17, 0.95);">
