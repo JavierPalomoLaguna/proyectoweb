@@ -11,8 +11,8 @@ SITE_ID = 1
 
 if ENV == 'production':
     DEBUG = False
-    ALLOWED_HOSTS = ['onlyglass.es', 'www.onlyglass.es']
-    CSRF_TRUSTED_ORIGINS = ['https://onlyglass.es', 'https://www.onlyglass.es']
+    ALLOWED_HOSTS = ['onlyglass.es', 'www.onlyglass.es','76.13.40.142', 'localhost','127.0.0.1']
+    CSRF_TRUSTED_ORIGINS = ['https://onlyglass.es', 'https://www.onlyglass.es', 'http://76.13.40.142', 'https://76.13.40.142']
     
     # Configuración automática del Site para producción
     try:
