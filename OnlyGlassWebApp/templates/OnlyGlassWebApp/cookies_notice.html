@@ -1,0 +1,102 @@
+<div id="cookies-notice" class="cookies-notice" style="display: none;">
+    <div class="cookies-content">
+        <p>
+            🍪 Utilizamos cookies propias y de terceros para mejorar tu experiencia, 
+            analizar el tráfico y personalizar contenido. 
+            <a href="/politica-cookies/" class="cookies-link">Política de cookies</a>
+        </p>
+        <div class="cookies-buttons">
+            <button id="accept-cookies" class="btn btn-success btn-sm">Aceptar</button>
+            <button id="reject-cookies" class="btn btn-outline-secondary btn-sm">Rechazar</button>
+            <a href="/politica-cookies/" class="btn btn-link btn-sm">Más información</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.cookies-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px 20px;
+    z-index: 9999;
+    border-top: 2px solid #007bff;
+}
+
+.cookies-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.cookies-content p {
+    margin: 0;
+    flex: 1;
+    min-width: 300px;
+    font-size: 14px;
+}
+
+.cookies-link {
+    color: #80d0ff;
+    text-decoration: underline;
+}
+
+.cookies-link:hover {
+    color: #ffffff;
+}
+
+.cookies-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cookiesNotice = document.getElementById('cookies-notice');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+    
+    // Comprobar si ya ha aceptado/rechazado cookies
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    const cookiesRejected = localStorage.getItem('cookiesRejected');
+    
+    // Mostrar aviso solo si no ha tomado una decisión
+    if (!cookiesAccepted && !cookiesRejected) {
+        // Esperar 1 segundo antes de mostrar
+        setTimeout(() => {
+            cookiesNotice.style.display = 'block';
+        }, 1000);
+    }
+    
+    // Aceptar cookies
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        localStorage.setItem('cookiesDecisionDate', new Date().toISOString());
+        cookiesNotice.style.display = 'none';
+        
+        // Aquí puedes inicializar Google Analytics u otras cookies
+        // initializeGoogleAnalytics();
+        
+        console.log('Cookies aceptadas');
+    });
+    
+    // Rechazar cookies
+    rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('cookiesRejected', 'true');
+        localStorage.setItem('cookiesDecisionDate', new Date().toISOString());
+        cookiesNotice.style.display = 'none';
+        
+        // Aquí puedes desactivar cookies no esenciales
+        console.log('Cookies rechazadas');
+    });
+});
+</script>

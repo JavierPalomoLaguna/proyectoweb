@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="{{ idioma_actual|default:'es' }}"> 
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título -->
+    <title>{% block title %}Only Glass - Cerramientos de cristal y pérgolas bioclimáticas en Alicante{% endblock %}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block meta_description %}Only Glass - Especialistas en cerramientos de cristal sin perfiles y pérgolas bioclimáticas en Alicante. Más de 15 años de experiencia transformando terrazas y exteriores.{% endblock %}">
+    <meta name="keywords" content="cerramientos cristal, pérgolas bioclimáticas, cortinas de cristal, Alicante, Daya Nueva, acristalamiento, carpintería aluminio">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Only Glass">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onlyglass.es{{ request.path }}">
+    <meta property="og:title" content="{% block og_title %}Only Glass - Cerramientos de cristal y pérgolas bioclimáticas{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Especialistas en cerramientos de cristal sin perfiles y pérgolas bioclimáticas en Alicante.{% endblock %}">
+    <meta property="og:image" content="https://onlyglass.es{% static 'OnlyGlassWebApp/img/og-image.jpg' %}">
+    <meta property="og:locale" content="{% if idioma_actual == 'en' %}en_GB{% else %}es_ES{% endif %}">
+    <meta property="og:site_name" content="Only Glass">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}Only Glass - Cerramientos de cristal{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Especialistas en cerramientos de cristal y pérgolas bioclimáticas en Alicante.{% endblock %}">
+    <meta name="twitter:image" content="https://onlyglass.es{% static 'OnlyGlassWebApp/img/og-image.jpg' %}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://onlyglass.es{{ request.path }}">
+    
+    <!-- Idiomas alternativos -->
+    <link rel="alternate" hreflang="es" href="https://onlyglass.es{{ request.path }}?lang=es">
+    <link rel="alternate" hreflang="en" href="https://onlyglass.es{{ request.path }}?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://onlyglass.es{{ request.path }}">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'OnlyGlassWebApp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link href="{% static 'OnlyGlassWebApp/css/base.css' %}?v=2" rel="stylesheet">    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'OnlyGlassWebApp/img/favicon.ico' %}">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Only Glass",
+        "description": "Especialistas en cerramientos de cristal sin perfiles y pérgolas bioclimáticas",
+        "url": "https://onlyglass.es",
+        "telephone": "+34684742664",
+        "email": "onlyglasscurtains@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Algorfa nº 15",
+            "addressLocality": "Daya Nueva",
+            "addressRegion": "Alicante",
+            "postalCode": "03159",
+            "addressCountry": "ES"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "38.1033486",
+            "longitude": "-0.7779924"
+        },
+        "openingHours": "Mo-Fr 09:00-14:00, Mo-Fr 17:00-20:00",
+        "priceRange": "€€",
+        "image": "https://onlyglass.es/static/OnlyGlassWebApp/img/og-image.jpg"
+    }
+    </script>
+</head>
+
+<body class="base-layout"> 
+  
+    <div class="container-fluid bg-dark text-white py-2 px-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>Only Glass - {{ t.hero_subtitulo }}</div>
+        <div>
+          <a href="tel:+34684742664" class="text-white me-3">📞 684742664</a>
+          <a href="mailto:onlyglasscurtains@gmail.com" class="text-white">✉️ onlyglasscurtains@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'OnlyGlassWebApp/img/logo.png' %}" alt="Only Glass" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">{{ t.inicio }}</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="categoriasDropdown" data-bs-toggle="dropdown">
+                {{ t.categorias }}
+              </a>
+              
+              <ul class="dropdown-menu">
+                {% for categoria in categorias_unicas %}
+                <li>
+                    <a class="dropdown-item" href="/blog/categoria/{{ categoria.nombre|slugify }}/">
+                        {{ categoria.nombre }}
+                    </a>
+                </li>
+                {% empty %}
+                <li><a class="dropdown-item" href="#">{{ t.no_hay_categorias }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}">{{ t.contacto }}</a>
+            </li>
+          </ul>
+
+          <!-- Selector de idioma -->
+          <div class="d-flex align-items-center">
+              <span class="me-2"></span>
+              <div class="selector-idioma">
+                  <a href="?lang=es" class="btn-bandera {% if idioma_actual == 'es' %}active{% endif %}">
+                      <img src="{% static 'OnlyGlassWebApp/img/flags/es.png' %}" alt="Español" width="20" height="15">
+                  </a>
+                  <a href="?lang=en" class="btn-bandera {% if idioma_actual == 'en' %}active{% endif %}">
+                      <img src="{% static 'OnlyGlassWebApp/img/flags/gb.png' %}" alt="English" width="20" height="15">
+                  </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Hero Section con imagen de fondo -->
+    <div class="hero-section">
+        <div class="container text-white text-center">
+            <h1 class="display-4 fw-bold mb-3 text-white">{{ t.hero_titulo }}</h1>
+            <p class="lead fs-4">{{ t.hero_subtitulo }}</p>
+            <p>{{ t.hero_descripcion }}</p>
+        </div>
+    </div>
+
+    <!-- Contenido dinámico-->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 mbt mt-3">
+          <a href="{% url 'politica_privacidad' %}" class="link text-white">{{ t.politica_privacidad }}</a> ·
+          <a href="{% url 'aviso_legal' %}" class="link text-white">{{ t.aviso_legal }}</a> ·
+          <a href="{% url 'politica_cookies' %}" class="link text-white">{{ t.cookies }}</a>
+        </p>
+        <p>&copy; 2026 Only Glass. {{ t.derechos }}</p>
+        <p class="m-0 mt-2 small">
+          <a href="https://www.codigovivostudio.cloud/" target="_blank" style="font-size: 0.75rem; text-decoration: none; color: rgba(255,255,255,0.5);">
+            Creado y diseñado por Código Vivo Studio
+          </a>
+        </p>
+      </div>
+        <p class="m-0 mt-3 small">
+          <a href="/admin/" class="text-muted" title="Panel de administración">⚙️⚙️⚙️</a>
+        </p>
+    </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+<!-- Aviso de Cookies -->
+{% include 'OnlyGlassWebApp/cookies_notice.html' %}
+
+</body>
+</html>

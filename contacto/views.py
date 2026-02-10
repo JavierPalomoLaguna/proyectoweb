@@ -1,12 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from .forms import FormularioContacto
 from .models import MensajeContacto
 from django.conf import settings
+from urllib.parse import quote
+from django.urls import reverse
+from OnlyGlassWebApp.idioma import get_idioma
+from blog.models import Categoria
+
 
 def contacto(request):
-    mensaje_exito = None
-
+    lang = get_idioma(request)
+    
+    # Si viene con parámetro de éxito (después de redirigir)
+    mensaje_exito = request.GET.get('mensaje_exito', None)
+    
     if request.method == "POST":
         formulario = FormularioContacto(request.POST)
         if formulario.is_valid():
@@ -14,7 +22,7 @@ def contacto(request):
             email = formulario.cleaned_data["email"]
             contenido = formulario.cleaned_data["contenido"]
 
-            # Guardar en la base de datos
+            # Guardar en BD
             MensajeContacto.objects.create(
                 nombre=nombre,
                 email=email,
@@ -23,23 +31,32 @@ def contacto(request):
 
             # Enviar correo
             send_mail(
-                subject="Nuevo mensaje de contacto",
+                subject="Nuevo mensaje de contacto - Only Glass",
                 message=f"Nombre: {nombre}\nEmail: {email}\nContenido:\n{contenido}",
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=['jpalomolaguna@gmail.com'],
+                recipient_list=['onlyglasscurtains@gmail.com'], 
                 fail_silently=False,
             )
-
-            mensaje_exito = "Mensaje enviado correctamente."
-            formulario = FormularioContacto()
-    else:
-        formulario = FormularioContacto()
-
-    context = {
+            
+            # DETECTAR si viene de home.html
+            if request.POST.get('from_home') == 'true':
+                mensaje_exito_texto = "¡Mensaje enviado correctamente! Te contactaremos pronto."
+                mensaje_codificado = quote(mensaje_exito_texto.encode('utf-8').decode('utf-8'))
+                return redirect(f'/?mensaje={mensaje_codificado}')
+            
+            # Redirigir a contacto con mensaje de éxito
+            mensaje_codificado = quote("¡Mensaje enviado correctamente! Te contactaremos pronto.")
+            return redirect(f'{reverse("contacto")}?mensaje_exito={mensaje_codificado}')
+    
+    # GET request: siempre formulario vacío
+    formulario = FormularioContacto()
+    
+    # Obtener categorías para el menú
+    categorias_unicas = Categoria.objects.all()
+    
+    return render(request, "contacto/contacto.html", {
         "formulario": formulario,
         "mensaje_exito": mensaje_exito,
-        'meta_title': 'Contacta con Nuestros Desarrolladores Web | Código Vivo Studio',
-        'meta_description': 'Solicita presupuesto para tu proyecto web. Desarrollo personalizado para restaurantes, comercios y empresas.',
-    }
-    
-    return render(request, "contacto/contacto.html", context)
+        "idioma_actual": lang,
+        "categorias_unicas": categorias_unicas,
+    })

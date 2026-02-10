@@ -1,0 +1,138 @@
+{% extends 'OnlyGlassWebApp/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- SECCIÓN 1: BLOG -->
+<section id="blog" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">{{ t.nuestros_proyectos }}</h2>  
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-md-4 col-lg-4 mb-4">
+                {% if post.imagen %}
+                <div class="post-imagen mb-3">
+                    <img src="{{ post.imagen.url }}" class="img-fluid rounded" alt="{{ post.titulo }}">
+                </div>
+                {% endif %}
+                <div class="post-contenido">
+                    <h3 class="h5">{{ post.titulo }}</h3>
+                    <p class="small">{{ post.contenido_mostrar|truncatewords:20 }}</p>
+                    
+                    {% if post.categorias.all %}
+                        {% with post.categorias.first as cat %}
+                        <a href="/blog/categoria/{{ cat.nombre|slugify }}/?post_id={{ post.id }}" class="btn btn-dark btn-sm">
+                            {{ t.ver_mas }}
+                        </a>
+                        {% endwith %}
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="w-100 d-none d-md-block"></div>
+            {% endif %}
+            
+            {% empty %}
+            <div class="col-12">
+                <p class="text-center">{{ t.no_hay_proyectos }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="/blog/categoria/todos/" class="btn btn-primary">
+                {{ t.ver_todos_proyectos }}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 2: CONTACTO -->
+<section id="contacto" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">{{ t.contacto }}</h2>
+        
+        {% if mensaje_exito %}
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="alert alert-success alert-dismissible fade show">
+                    {{ mensaje_exito }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <form method="post" action="{% url 'contacto' %}">
+                            {% csrf_token %}
+                            
+                            <div class="mb-3">
+                                <label for="id_name" class="form-label">{{ t.nombre }}</label>
+                                {{ contacto_form.name }}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_email" class="form-label">{{ t.email }}</label>
+                                {{ contacto_form.email }}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_contenido" class="form-label">{{ t.mensaje }}</label>
+                                {{ contacto_form.contenido }}
+                            </div>
+                            
+                            <input type="hidden" name="from_home" value="true">
+                            
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-primary px-4">
+                                    {{ t.enviar_mensaje }}
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <p class="text-center mt-4 mb-0">
+                            <small>{{ t.pagina_contacto }} 
+                            <a href="{% url 'contacto' %}">{{ t.ir_contacto }}</a></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 3: DÓNDE ESTAMOS -->
+<section id="ubicacion" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">{{ t.donde_estamos }}</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mapa">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.800215313319!2d-0.7779924!3d38.1033486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63a509980b0fe5%3A0xa9a165b6e7f86caa!2sC.%20Algorfa%2C%2015%2C%2003159%20Daya%20Nueva%2C%20Alicante!5e0!3m2!1ses!2ses!4v1733075940123!5m2!1ses!2ses"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-contacto">
+                    <h4>{{ t.info_contacto }}</h4>
+                    <p>📍 {{ t.direccion }}: Calle Algorfa nº 15, cp 03159 Daya Nueva, Alicante</p>
+                    <p>📞 {{ t.telefono }}: +34 684742664</p>
+                    <p>✉️ {{ t.email }}: onlyglasscurtains@gmail.com</p>
+                    <p>🕒 {{ t.horario }}: {{ t.horario_valor }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
