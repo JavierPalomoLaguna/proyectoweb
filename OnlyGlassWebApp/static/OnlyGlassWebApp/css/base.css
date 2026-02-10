@@ -716,3 +716,56 @@ section {
     display: block !important;
     margin: 0 !important;
 }
+
+/* ===== AJUSTES HERO PARA MÓVILES - SOLUCIÓN TEXTO SOLAPADO ===== */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh; /* Más espacio en móviles */
+        padding: 20px 0;
+    }
+    
+    .hero-section .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+        margin-bottom: 10px !important;
+        line-height: 1.2;
+    }
+    
+    .lead {
+        font-size: 1.1rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.4;
+    }
+    
+    .text-white p {
+        font-size: 0.95rem !important;
+        line-height: 1.5;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 70vh; /* Aún más espacio en móviles pequeños */
+    }
+    
+    .display-4 {
+        font-size: 1.8rem;
+        margin-bottom: 8px !important;
+    }
+    
+    .lead {
+        font-size: 1rem !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .text-white p {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+    }
+}
